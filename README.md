@@ -7,3 +7,27 @@
 ```bash
 git clone <https://github.com/sls-aln/sls.git>
 cd my-practice
+
+
+
+# Notes API — сервис для управления заметками
+## Описание
+REST API для создания, чтения, обновления и удаления заметок.  
+Стек: Flask, PostgreSQL, SQLAlchemy, Docker.
+
+## API Эндпоинты
+| Метод | URL | Описание |
+|-------|-----|----------|
+| GET | /notes | Получить все заметки |
+| GET | /notes/<id> | Получить заметку по ID |
+| POST | /notes | Создать заметку |
+| PUT | /notes/<id> | Обновить заметку |
+| DELETE | /notes/<id> | Удалить заметку |
+
+## Примеры запросов
+
+### Создание заметки
+```bash
+curl -X POST http://localhost:5000/notes \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Моя заметка", "content": "Текст"}'
